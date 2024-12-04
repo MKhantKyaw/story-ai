@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
           Make the story engaging and appropriate for children.`,
         },
       ],
-      max_tokens: 200,
+      max_tokens: 100,
     });
     const storyContent =
       storyResponse.choices[0].message?.content?.trim() || "";
