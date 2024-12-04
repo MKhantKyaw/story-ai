@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow: {
+        "shadow-inner-lg": "inset 0px 0px 4px 2px rgb(192 132 252 / 0.8)",
+      },
     },
   },
   plugins: [],
