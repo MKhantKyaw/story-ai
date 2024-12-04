@@ -8,9 +8,9 @@ export const generateStory = async (formData: FormData) => {
   const { character, place, genre, name, goal, challenges } =
     Object.fromEntries(formData.entries());
 
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-  const response = await fetch(`/api/generate`, {
+  const response = await fetch(`${baseUrl}/api/generate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
