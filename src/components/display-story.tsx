@@ -91,6 +91,11 @@ export default function StoryDisplay({ story }: StoryType) {
                 </div>
               </div>
             ))}
+            <div className="bg-gradient-to-tr from-purple-400/50 via-blue-300 to-red-400/50">
+              <div className="p-8 rounded-lg flex items-center justify-center">
+                <p className={`${fontSize}`}>The End</p>
+              </div>
+            </div>
           </HTMLFlipBook>
         </div>
       </article>
