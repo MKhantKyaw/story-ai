@@ -10,6 +10,8 @@ export const generateStory = async (formData: FormData) => {
 
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
+  console.log(baseUrl);
+
   const response = await fetch(`${baseUrl}/api/generate`, {
     method: "POST",
     headers: {
@@ -18,7 +20,7 @@ export const generateStory = async (formData: FormData) => {
     body: JSON.stringify({ character, place, genre, name, goal, challenges }),
   });
   const data = await response.json();
-  // console.log(data);
+  console.log(data);
   const newStory = await prisma.story.create({
     data: {
       title: data.title,
