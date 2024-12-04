@@ -49,7 +49,11 @@ export async function POST(request: NextRequest) {
 
     // Assuming the response format is "<title>\n\n<story>"
     const [titleLine, ...storyLines] = storyContent.split("\n");
+
+    // format the title
     const title = titleLine.replace("Title: ", "").trim();
+
+    // format the story
     const story = storyLines.join("\n").trim();
 
     // Generate image using DALL-E 2
@@ -60,7 +64,7 @@ export async function POST(request: NextRequest) {
     });
     const imageUrl = imageResponse.data[0].url;
 
-    //dummy imagUrl
+    /*dummy imagUrl without openai api*/
     // const imageUrl =
     //   "https://oaidalleapiprodscus.blob.core.windows.net/private/org-oztsODLCN4wofY4imctfnFIZ/user-A46aW81lKuPWZiIM39z8q8uJ/img-991hD6LdeQ0jfqXyXtGNBq2A.png?st=2024-12-04T14%3A33%3A41Z&se=2024-12-04T16%3A33%3A41Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-04T00%3A10%3A46Z&ske=2024-12-05T00%3A10%3A46Z&sks=b&skv=2024-08-04&sig=vvYl9vBLbjrqbe8Sv1d5PIs4L74bo/mKYkXivwxfheY%3D";
 
@@ -75,7 +79,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-//dummy data without openai api
+/*dummy data without openai api*/
 // type Input = {
 //   character: string;
 //   place: string;

@@ -3,7 +3,12 @@
 import { notFound, redirect } from "next/navigation";
 import prisma from "./db";
 
-//server action for generating a story after form submission
+/**
+ * server action for generating a story after form submission
+ *
+ * @param formData - form data from the form submission, containing story prompts
+ */
+
 export const generateStory = async (formData: FormData) => {
   const { character, place, genre, name, goal, challenges } =
     Object.fromEntries(formData.entries());
