@@ -3,6 +3,7 @@
 import { notFound, redirect } from "next/navigation";
 import prisma from "./db";
 
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 /**
  * server action for generating a story after form submission
  *
@@ -12,10 +13,6 @@ import prisma from "./db";
 export const generateStory = async (formData: FormData) => {
   const { character, place, genre, name, goal, challenges } =
     Object.fromEntries(formData.entries());
-
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-  console.log(baseUrl);
 
   const response = await fetch(`${baseUrl}/api/generate`, {
     method: "POST",

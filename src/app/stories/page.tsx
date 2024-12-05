@@ -1,7 +1,17 @@
 import StoryCard from "@/components/story-card";
 import StoryCreateCard from "@/components/story-create-card";
 import { getStories } from "@/lib/actions";
+import { Metadata } from "next";
 import React from "react";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 10;
+export function generateMetadata(): Metadata {
+  return {
+    title: "My Stories",
+    description: "Create and view your stories",
+  };
+}
 
 export default async function StoryListPage() {
   const stories = await getStories();
