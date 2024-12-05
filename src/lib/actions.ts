@@ -59,6 +59,10 @@ export const getStory = async (id: string) => {
 
 //server action for fetching all stories
 export const getStories = async () => {
-  const stories = await prisma.story.findMany();
+  const stories = await prisma.story.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
   return stories;
 };

@@ -8,7 +8,7 @@ export default function Blob() {
       width={600}
       height={600}
       alt="Blob"
-      className="hidden lg:inline blur-lg"
+      className="hidden lg:inline"
     />
   );
 }
