@@ -1,15 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFormStatus } from "react-dom";
 
 export default function Loader() {
   const { pending } = useFormStatus();
-  useEffect(() => {
-    if (pending) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [pending]);
   return (
     <>
       {pending && (
