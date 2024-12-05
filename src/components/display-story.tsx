@@ -50,7 +50,7 @@ export default function StoryDisplay({ story }: StoryType) {
       </nav>
       <article>
         <h2 className="text-4xl mb-8 font-bold">{story.title}</h2>
-        <div className="flex justify-center">
+        <div className="sm:flex sm:justify-center hidden">
           <HTMLFlipBook
             width={550}
             height={650}
@@ -97,6 +97,15 @@ export default function StoryDisplay({ story }: StoryType) {
               </div>
             </div>
           </HTMLFlipBook>
+        </div>
+        <div className="flex flex-col gap-4 justify-center items-center sm:hidden">
+          <Image
+            src={story.imageUrl}
+            alt={story.title}
+            width={300}
+            height={300}
+          />
+          <p className={`${fontSize}`}>{story.content}</p>
         </div>
       </article>
     </section>
